@@ -1,0 +1,256 @@
+Access Specifiers :-
+------------------
+->It provides the accessible permission to various fields of program.
+
+->basically they are of 4 types
+  1.public
+  2.private
+  3.protected
+  4.default
+
+->They are applicable to 
+  1.class
+  2.method(static & non static)
+  3.variables(static & non static)
+  4.constructors
+  5.Interface
+
+
+
+
+
+package:It is like a folder where all common classes kept together at one place
+
+public specifier:-
+-----------------
+->It is the lowest level of specifier 
+->public fields are accessible within class anywhere
+->public fields are accessible within anotherclass anywhere of same package
+->public fields are accessible within anotherclass of another package only.
+  after import statements
+
+import:-
+-------
+->It provides the previlege of using code of one class into another class
+->syntax:    import packagename.classname;
+            import packagename.*;
+
+-Accessing public field within same class and outside class of same package
+package ArrayProg;
+
+public class d11 {
+
+	public static int i=100;
+	public static void main(String[] args)
+{
+	  d22.fly();
+	  //accessible directly within class
+      System.out.println(i);
+	}
+}
+class d22
+{
+	public static void fly()
+	{
+		//i is accessible directly outside of class coz it is public 
+	System.out.println(d11.i);
+}
+}
+-Accessing public field in another class in another package but only 
+after import statement.
+package dummy;
+import ArrayProg.d11;
+public class d22 {
+
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+   System.out.println(d11.i);
+	}
+
+}
+
+
+
+
+
+
+
+
+-If a class is public then only it can be imported other wise we can't import
+ non public classes
+   VALID  package java.ab;
+ for ex:  public class A 
+          {}
+          import java.ab.A;
+
+  INVALID  package java.ab;
+ for ex:   class A 
+          {}
+          import java.ab.A;
+
+2.default specifier
+-------------------
+-In java there is no such word called as default i.e if we did not specify any modifier 
+ like public,private or protected JVM will consider it as default.
+
+-default fields can be accessible anywhere within class
+
+-default fields are accessible outside of another class but that class should belongs to
+ same package
+
+-default classes cannot be imported 
+
+-default specifier is also called as package specifier because it is restricted within package
+
+private specifier
+------------------
+-it provides the highest level of restrictions
+
+-private members can only be accessed within same class
+
+-private fields cannot be accessed outside of declared class
+
+-A class can never be private
+
+-private methods can't be inherited and overridden
+
+protected specifier
+-------------------
+-protected fields can be accessible anywhere with in class
+
+-protected fields can be accessible within another class but that class
+ should belongs to same package
+package ArrayProg;
+
+ public class d11 {
+
+	protected static int i=100;
+	public static void main(String[] args){
+	  d22.fly();
+	  //accessible directly within class
+      System.out.println(i);
+	}
+}
+class d22
+{
+	public static void fly()
+	{
+		//i is accessible directly outside of class coz it is protected 
+	System.out.println(d11.i);
+}
+}
+
+-protected fields can be accessible within another class of another  package
+ but only after inheritance
+package dummy;
+import ArrayProg.d11;
+public class d22 extends d11
+{
+
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+   System.out.println(d11.i);
+	}
+
+}
+
+-A class can never be protected
+
+note:
+-----
+-We can write multiple import statements to use multiple classes
+ For ex:  public class A              import A
+          {}                          import B
+         public class B               import C
+         {}                           class D
+         public class C               {
+          {}                            //some code//
+                                       }
+     
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+

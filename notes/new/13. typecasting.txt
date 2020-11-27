@@ -1,0 +1,291 @@
+Type Casting
+----------------
+-Converting one type of primitive datatype into another type of primitive 
+   datatype is called as type casting
+            OR
+-Assigning one type of value into another type is called as Type casting.
+
+it is divided into 2 types
+
+1.Widening           2.Narrowing
+
+Widening
+-----------
+-Converting smaller  primitive datatype into bigger primitive datatype is called
+ as widening.
+
+-Widening is also called as implict Casting
+
+-byte--->short---->int---->long--->float----->double
+
+-Since we are converting a smaller type into bigger type there is no loss of data.
+
+Narrowing
+----------
+-Converting bigger  primitive datatype into smaller primitive datatype is called
+ as Narrowing.
+
+-Narrowing is also called as Explict Casting
+
+-byte<---short<----int<----long<---float<-----double
+
+-Since we are converting a bigger type into smaller type there is 
+ loss of data.
+
+
+
+
+
+
+
+
+
+
+
+Life cycle of Object
+---------------------
+-Objects can be created by using new keyword.
+
+-If an object is no longer useful it is better to make that object as Abundon object.
+
+-Objects whose control is no longer with programmer or object who does not have
+  reference or Object who reference is nullified such objects are called as 
+  abundon objects.
+
+For Ex:
+--------
+Dog d1=new Dog();
+Dog d2=new Dog();
+Dog d3;
+Dog d4;
+
+  d3=new Dog();
+  d4=d3;
+
+d2=null;//abundon object
+d1=null;//abundon object
+Object casting:
+--------------
+-Converting one type of object into another type of object is called as Object casting.
+
+-2 types
+---------
+1.Upcasting
+2.Downcasting
+
+Upcasting:
+----------
+
+-Converting subclass object type into super class object type is called as upcasting
+
+                         OR
+
+-create an object of subclass and store it into a reference of super class is called as upcasting
+
+-During type casting only super class behviour is visible subclass behviour is hidden
+
+Program
+---------
+class Police
+{
+	public void lockdown()
+	{
+		System.out.println("stay at home");
+	}
+}
+class Boyfriend extends Police
+{
+	public void lockdown()
+	{
+		System.out.println("No matter whathappens i will go out for her");
+	}
+	public void meetingGirlfriend()
+	{
+		System.out.println("Want to see her only once");
+	}
+}public class USER {
+	public static void main(String[] args) {
+		Police p1=new Boyfriend();//upcasted object
+		p1.lockdown();//compiles successfully
+		//p1.meetingGirlfriend();//CTE because during upcasting subclass
+                                            behaviour is notvisible.
+
+
+-Since subclass contains the properties of super class upcasting is possible directly
+  i.e superclass can hold the reference of sub class.
+-SO upcasting is implict in nature.
+
+Downcast:
+---------
+-Converting an superclss object type into subclass object type is called as downcasting
+
+                          OR
+
+-Converting an upcasted object into normal form is called as downcasting.
+
+-During down casting both subclass and super class behaviour is visible
+
+-since super class does not contains property of subclass directly downcasting is not possible
+  explictly we have to convert it.
+
+-so thats why downcasting is explict in nature.
+
+-Only upcasted object is downcasted, i.e direct downcasting is not possible.
+
+Program
+-----------
+public class USER {
+	public static void main(String[] args) {
+		Police p1=new Boyfriend();//upcasted object
+		p1.lockdown();//compiles successfully
+		//p1.meetingGirlfriend();//CTE
+		 Boyfriend b1 = (Boyfriend)p1;  //Boyfriend b1=new Boyfriend()
+		 b1.lockdown();
+		 b1.meetingGirlfriend();
+	}}
+class Police
+{
+	public void lockdown()
+	{
+		System.out.println("stay at home");
+	}
+}
+class Boyfriend extends Police
+{
+	
+	public void meetingGirlfriend()
+	{
+		System.out.println("Want to see her only once");
+	}
+}
+
+Examples
+------------
+
+                   Qspiders(APP)
+                         Viewing       Editing
+         Student          yes            No(hidden)//Upcasting
+        
+         Admin            yes            yes//Downcasting
+
+
+                    Aeroplane
+                            Tyres     Wings
+         TakingOff          hidden    Visible//Upcasting
+
+         Landing            Visible   Visible//downcasting
+
+Tommorow's task is to create these two examples.
+
+
+
+
+
+
+
+
+
+
+
+
+
+          
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+ 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

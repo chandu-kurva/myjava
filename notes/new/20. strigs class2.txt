@@ -1,0 +1,113 @@
+methods of String class
+-----------------------
+1.length():int
+--------------
+it provides length of String
+length will always calculated from 1
+    for ex:String s="java";
+           System.out.println(s.length());
+           output:4
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+2.charAt(Index):char
+--------------------
+it provides character at given index
+      for ex:String s="java";
+             System.out.println(s.charAt(3));//output is a
+if we provide invalid index as args for charAt() we will get 
+StringIndexOutOfBoundsException
+
+
+u have 10 minutes of time solve and post program
+program to solve
+----------------
+WAP to count no of e characters present in given string
+Sring s="Eewwwweeee".
+WAP to print all vowels from given String
+String s="javadevelopment"
+WAP to count total no of vowels from given String
+String s="javadevelopment"
+OUTPUT:6
+WAP to count individual no of vowels from given String
+String s="javadevelopment"
+OUTPUT :a=2,e=3,i=0,o=1,u=0
+3.object1.equals(object2):boolean
+---------------------------------
+it checks whether two string are same or not
+i.e it compares two strings based on string data
+   1.String s1="java";
+     String s2="java";
+    System.out.println(s1.equals(S2));//true
+  2.
+   String s1="java";
+   String s2="javadev";
+    System.out.println(s1.equals(S2));//false
+ 3.
+   String s1="java";
+   String s2="JAva";
+    System.out.println(s1.equals(S2));//false
+because equals method consider case sensitivity    
+4.object1.equalsIgnoreCase(object2)
+-----------------------------------
+ compares two strings based on string data without considering
+ case sensitivity.
+Assignment Prog
+----------------
+2.WAP to find reverse of String
+3.WAP to check whether string is palindrome or not
+4.WAP to count no of words present in string
+   i am java developer
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

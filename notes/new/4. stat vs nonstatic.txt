@@ -1,0 +1,133 @@
+Differences between static and Non static
+------------------------------------------
+
+public class First {
+    static int i=100;
+    int j=200;
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+       First f1=new First();
+       f1.i=300;
+       f1.j=490;
+       First f2=new First();
+       System.out.println(i);//300
+       System.out.println(f1.i);//300
+       System.out.println(f1.j);//490
+       System.out.println(i);// 300
+       System.out.println(f2.j);//200 
+	}
+
+}
+-static variables have been allocated memory only once in SPA because they will be loaded
+ only once in SPA.
+-so if i change its value it is going to change permanently(throughout program)
+-Therefore static variables are called as class variables
+-Non static variables will have separate memory for every object because they will 
+ be loaded always when we create object
+-so if we change j value it will be change for that particular object not for whole 
+ class(not permanently).
+-Therefore non static variables are also called as Instance Variables.
+         static                                     Non Static
+--------------------------------------------------------------------------------------------
+1.static means single copy                           1.Non static means multiple copies
+
+2.static members are present in                      2.Non static members are present in object
+   static pool area.
+
+3.static members can be accessed in 3 ways           3.Non static members can be accessed through
+                                                      Object
+  1.Directly
+  2.Through class name
+  3.Through object reference
+
+4.static members will get loaded only once in         4.Non static members will get loaded
+  SPA                                                 whenever we created an object
+
+5.class loader is responsible to load static          5.new Keyword is responsible to load
+  members                                               all non static members
+
+6.Any changes made to static var will effect entire   6.Anychanges made to non static variable
+  class that is why static variable are also           will effect only a particular object
+  called as class variables.                           thats why they called as instance variables.
+
+7.We go for static if the data is fixed.              7.We go for non static if data is changing
+    static String clg="Qspiders";                               String courses="CSE";
+8.static methods cannot be inherited                  8.Non static methods can be inherited
+
+9.static methods cannot be overridden                 9.Non static can be overridden
+
+
+Multiple Ways to access static Members
+----------------------------------------
+-Static members can be accessed in 3 ways 
+
+1.Directly---->because they will get loaded only once in SPA
+
+2.Through class name---------->becuase class name and static pool area names are same
+
+3.Through Object------->because there is a one way connection between
+                        Object and static pool area.
+
+class A
+{
+static int i=100;
+public static void main(String args[])
+{
+ System.out.println(i);
+System.out.println(A.i);
+A a1=new A();
+System.out.println(a1.i);
+}}
+ 
+Conclusion 
+-----------
+1.we go for first approach if we access static members of same class.
+2.We go for second approach if we access static members of different class
+3.Third approach is not recommended.
+
+Accessing members of one class in another classs
+----------------------------------------------------
+-We can access both static and non static members of one class in another class
+
+-if it is static we can access through class name
+
+-if it is non static we can access through object.
+
+-if multiple class are there save file name with classname which have main method
+class First
+{
+  static int i=100;
+  String s="java";
+}
+class Second
+{
+ public static void main(Strig args[])
+ {
+   System.out.println(First.i);
+   First f=new First();
+   System.out.println(f.s);
+}}
+
+-First class loader will load static members of second class in SPA whose name is Second
+-When SOP(First.i) is executed again class loader will load First class static members
+ in SPA whose name is First
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

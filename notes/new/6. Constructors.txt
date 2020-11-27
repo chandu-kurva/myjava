@@ -1,0 +1,435 @@
+CONSTRUCTORS
+--------------
+Need of Constructor
+---------------------
+-Non static variables plays a special role in every program 
+i.e non static refers
+ to multiple copies which means that for 
+every object there is a separate
+ memory allocated for non static variable,
+which means programmer can initialise
+ everytime new value to non static variable
+For Example
+-------------
+ class Student
+{
+  String name;
+ public static void main(String args[])
+ {
+   Student s1=new Student();
+   s1.name="John";
+   System.out.println(s1.name);
+   Student s2=new Student();
+   s2.name="Rohan";
+   System.out.println(s2.name);
+   Student s3=new Student();
+   System.out.println(s3.name);
+}}
+
+-In above program name value is not initialised so it is name=null.
+-if we want to initialise it we have to do manually initialise value for every object
+  which is a lengthy approach and chances are there that user may forget to initialise
+-Therefore to initialise a non static variable, a special characteristics concept
+ is given as constructor.
+
+Definition
+-----------
+-Constructor is a special type of method which gets executed whenever we created an 
+ object.
+-The main purpose of constructor is to initialise a non static variable.
+
+Syntax:    AccessModifier constructorname(arg/no args)
+
+Rules for defining constructor
+------------------------------
+-Constructor can be public,private,protected or default.
+
+-Constructor cannot be static,non static ,final or abstract.
+
+-Constructor name must be same as that of classname.
+
+-Constructor does not have any return type not even void 
+
+-Constructor can be with arguments or  without args.
+
+Types of Constructors:-
+----------------------
+2 types
+1.No argument Constructor
+2.Parameterized Constructor
+
+No argument Constructor
+------------------------
+-If a constructor does not have any argument it is called as No argument constructor
+
+class Student
+{
+  String name;
+  //define constructor
+   public Student()
+   {
+     name="John";
+   }
+ public static void main(String args[])
+ {
+   Student s1=new Student();
+   System.out.println(s1.name);
+   Student s2=new Student();
+   System.out.println(s2.name);
+   Student s3=new Student();
+   System.out.println(s3.name);
+   
+ }
+}
+
+
+
+
+class Dog                                     class Book                 class Car
+{                                             {                          {
+ String name;                                    String bookname;          String carname;
+ //@constructor                                  int bookprice;            int price
+    public Dog()                                  //Complete program}      String color;
+    {                                                                      int capacity
+      name="Tommy";                                                        //complete program
+    }
+ public static void main(String args[])
+ {
+   Dog f=new Dog();
+   System.out.println(f.name);//Tommy
+   Dog f1=new Dog();
+   System.out.println(f1.name);//Tommy
+ 
+}}
+
+-One of the drawbacks of default(no argument)constructors is it provides same value for 
+ every object.
+-Therefore to overcome this drawback we go for parameterized constructor.
+parameterised Constrctor
+------------------------
+-If a constructor contains any arguments it is called as parameterised constructor.
+-While creating Object we have to pass particular argument as constructor.
+class Dog
+{
+ String name;
+ String color;
+ //@ parameterised constructor
+  public Dog(String dname,String dcolor)
+  {
+    //initialise
+      name=dname;
+      color=dcolor;
+  }
+ public static void main(String args[])
+ {
+   Dog f=new Dog("Tommy","Black");
+   System.out.println("First dog name is :"+f.name+"Color is :"+f.color);
+   Dog f1=new Dog("Softy","White");
+   System.out.println("Second dog name is:"+f1.name+"Color is:"+f1.color);
+    Dog f2=new Dog("fluffy","Ash");
+   System.out.println("Third dog name is:"+f2.name+"Color is:"+f2.color);
+}}
+C:\Docs\programs\Kccm4>java Dog
+First dog name is :Tommy Color is :Black
+Second dog name is:Softy Color is:White
+Third dog name is:fluffy Color is:Ash
+
+2.program
+---------
+Create an employee APP which includes instance members as
+ employeename
+ employeeid 
+ employeesalary
+ employeedesignation
+
+and print info for atleast 2 employee
+
+
+
+
+
+
+
+Solution
+--------
+class Employee
+{
+ String name,desg;
+ int id,sal;
+ //@constructor
+  public Employee(String name,String desg,int id,int sal)
+  {
+    //initialise
+     name=name;
+      this.desg=desg;
+      this.id=id;
+      this.sal=sal;
+  }
+  //@defining display()
+   public void display()
+   {
+      System.out.println("Name :"+name);
+     System.out.println("Designation :"+desg);
+    System.out.println("Their ID :"+id);
+   System.out.println("Sal per month is :"+sal);
+   }
+ public static void main(String args[])
+ {
+   Employee e1=new Employee("John","QA",1234,20000);
+   e1.display();
+   Employee e2=new Employee("Rahul","QA",1235,20000);
+   e2.display();
+ 
+}}
+
+C:\Docs\programs>java Employee
+Name :John
+Designation :QA
+Their ID :1234
+Sal per month is :20000
+Name :Rahul
+Designation :QA
+Their ID :1235
+Sal per month is :20000
+3.Prograam
+----------
+Create a APP for Book which have instance members as
+ bookname
+ bookprice
+ bookpages
+ bookauthor
+ bookpublisher
+
+and print the details of 3 books
+
+Define display method(non static) to print info and call it on all 3 objects.
+
+Note:-
+------
+-Standard way is to use a different names for non static variable
+ and constructor arguments.
+-But In case if we use Same name for both,JVM will not able to differentiate
+ and did not initialises value properly so when non static variable
+ is not initialise we will get default value as output.
+
+-In order to overcome this drawback we use this keyword.
+
+this Keyword:-
+-------------
+-this keyword indicates current object under execution.
+-It is used when we keep same name for Constructor/method argument
+ and non static variable.
+class Employee
+{
+ String name,desg;
+ int id,sal;
+ //@constructor
+  public Employee(String name,String desg,int id,int sal)
+  {
+    //initialise
+     this.name=name;//currentobject.name=name
+      this.desg=desg;//currentobject.desg=desg
+      this.id=id;//currentobject.id=id
+      this.sal=sal;//currentobject.sal=sal
+  }
+  //@defining display()
+   public void display()
+   {
+      System.out.println("Name :"+name);
+     System.out.println("Designation :"+desg);
+    System.out.println("Their ID :"+id);
+   System.out.println("Sal per month is :"+sal);
+   }
+ public static void main(String args[])
+ {
+   Employee e1=new Employee("John","QA",1234,20000);
+   e1.display();
+   Employee e2=new Employee("Rahul","QA",1235,20000);
+   e2.display();
+  }}
+
+C:\Docs\programs>java Employee
+Name :John
+Designation :QA
+Their ID :1234
+Sal per month is :20000
+Name :Rahul
+Designation :QA
+Their ID :1235
+Sal per month is :20000
+
+Constructor Overloading
+-----------------------
+-The process of developing multiple CONSTRUCTOR with same constructor name but 
+different argument list is called as constructor Overloading.
+
+RULES FOR ARGS LIST:-
+---------------------
+-BETWEEN THE CONSTRUCTORS NO.OF ARGS SHOULD BE DIFFERENT
+-BETWEEN THE CONSTRUCTORS TYPE(DATATYPE) OF ARGS SHOULD BE DIFFERENT
+-BETWEEN THE CONSTRUCTORS POSITION OR  SEQUENCE OF ARGS SHOULD BE DIFFERENT
+PROGRAM 
+----------
+CREATE A CAR APP
+STEP-1:
+------
+declare 5 instance members
+carname
+carcolor
+carprice
+capacity
+model
+step-2:-
+-------
+create 3 constructors
+car(String name,String color)
+car(String name,String color,double price)
+car(String name,String color,double price,int capacity,String model)
+Step-3
+------
+create main() and create objects to call those constructor and print
+details of car
+
+
+Solution
+---------
+class Car
+{
+ String name,color,model;
+ double price;int capacity;
+ //@constructors
+  public Car(String name,String color)
+  {
+    //initialise
+     this.name=name;
+      this.color=color;
+  }
+  public Car(String name,String color,double price)
+  {
+    //initialise
+     this.name=name;
+      this.color=color;
+      this.price=price;
+  }
+public Car(String name,String color,double price,int capacity,String model)
+  {
+    //initialise
+     this.name=name;
+     this.color=color;
+     this.price=price;
+     this.capacity=capacity;
+     this.model=model;
+  }
+ 
+ public static void main(String args[])
+ {
+   Car e1=new Car("Audi","Black");
+   System.out.println("Car :"+e1.name+ "  Color :"+e1.color);
+      Car e2=new Car("Benz","Black",6000000);
+ System.out.println("Car :"+e2.name+ "  Color :"+e2.color+" Price :"+e2.price);
+   Car e3=new Car("Benz","White",4100000,4,"c-class");
+ System.out.println("Car :"+e3.name+ "  Color :"+e3.color+" price :"+e3.price+" Capacity :"+e3.capacity
+                      +" model :"+e3.model);
+   }}
+
+C:\Docs\programs>java Car
+Car :Audi  Color :Black
+Car :Benz  Color :Black Price :6000000.0
+Car :Benz  Color :White price :4100000.0 Capacity :4 model :c-class
+
+-The main purpose of constructor overloading is to create an object in
+ multiple ways.
+For ex:
+Manufacture of shirt
+-halfsleeves
+-fullsleeves
+-withoutsleeves
+
+2.Lock
+-Keylock
+-passwordlock
+-sensorlock
+
+program
+--------(DXC,legato)
+1.WAP to swap two numbers  10 20
+   a.using third variable
+   b.without using third variable
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

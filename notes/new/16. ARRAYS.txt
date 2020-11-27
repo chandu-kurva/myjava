@@ -1,0 +1,92 @@
+
+meeting id: 772-808-787
+ARRAYS
+-----
+def:An array is collection of homogenous elements(data) 
+    2.whenever we want to use multiple or group of elements or data at same time
+      we go for arrays
+    for ex:if i want to use 1 to 100 at same time its not possible to
+           store in variables and use it because it is very lengthy process
+           so for such kind of situation java has given arrays.
+    3.IN jAVA AN ARRAY IS AN OBJECT
+
+SYNTAX: 1.ARRAYTYPE ARRAYNAME[]=new ARRAYTYPE[SIZE];
+        2.ARRAYTYPE[] ARRAYNAME=new ARRAYTYPE[SIZE];
+        3.ARRAYTYPE  []ARRAYNAME=new ARRAYTYPE[SIZE];
+          EX:int a[]=new int[3];
+             double []d=new double[3];
+             float[] f=new float[4];
+         array stores the elements in index format which always starts from 0(for above 
+         ex it is 0,1,2)
+-Once Array get created there will be default values stored in that array object
+
+         -once we created an array default values will be present
+          //storing elements in an array by using index values//
+               a[0]=10; 
+               a[1]=20;
+               a[2]=30;
+           double d[]=new double[4];
+               d[0]=0.22;  
+               a[1]=0.33; 
+               a[2]=0.44;
+               a[3]=0.55;
+         //for printing elements of array//
+            System.out.println(a[0]);
+            System.out.println(a[1]);
+           System.out.println(d[0]);
+           System.out.println(d[1]);
+           System.out.println(d[2]);
+ int a[]=new int[4];
+		
+     a[0]=10;
+      a[1]=445.5f;//CTE
+      a[2]=123.334;//CTE
+      a[3]=false;//CTE
+ //Array stores only homogeneous data i.e in integer array we ca add only integer data if we
+   add anyother type of data we will get compile time error.
+	
+         //when we already knows  elements of array we can also create the array as //
+             arraytype arrayname[]={elements};
+             int a[]={10,22,33,44,555,666,7777,88};
+              System.out.println(a[0]);
+System.out.println(a[1]);
+System.out.println(a[2]);
+            |
+            |
+ so on ......... //
+
+
+//if we store elements more than declared size we will get  array index out of bounds 
+              exception
+               ex:
+                int a[]=new int[3];
+                    a[0]=11;
+                    a[1]=22;
+                    a[2]=33;
+                    a[3]=44;//ARRAYINDEXOUTOFBOUNDSEXCEPTION//
+Exception in thread "main" java.lang.ArrayIndexOutOfBoundsException: 4
+
+
+
+ length variable:
+----------------
+it provides length of array and length will always calculated from 1
+   ex:int a[]=new int[300];
+        System.out.println(a.length);
+   output is :300
+          
+ -Size of the array is cannot be a decimal value
+    int a[]=new int[4.0];//CTE
+-It is mandatory to give size of array if we did not given size we will get CTE
+    int a[]=new int[];//CTE
+
+4 programs
+---------------
+1.WAP to find greatest eleemnt from array
+2.WAp to find smallest element from an array
+3.WAP to sorting in increasing order
+4.wap to sort in decresing order
+Note: take values from user
+
+
+      

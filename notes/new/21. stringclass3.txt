@@ -1,0 +1,86 @@
+WAP to count total no of words present in string
+String s="I am a java developer"
+5.trim():String
+-------------
+it removes white spaces from starting and ending of string
+trim() will not removes spaces from middle 
+ex:  s="  java dev ";
+     s.trim();---->"java dev"
+
+6.subString(int arg):String
+----------------------------------------------
+-it provides subpart of a string.
+  ex:String s="java";
+     String s1=s.subString(1);//ava
+     SOP(s1);
+ subString(int fromindex,int toindex):String
+---------------------------------------------
+  subString(int fromindex(including),int toindex(excluding)):String 
+ ex:String s="java";
+     String s1=s.subString(1,3);//1,3-1//av
+      SOP(s1);
+
+
+Assigment
+----------
+program on substring recently asked in quality labs interview
+---------------------------------------------------------------
+WAP to count frequency of substring in given string
+
+string s="we work to live and we live to be happy"
+same string they gave 
+substring is live 
+so u have to count how many times live came
+
+6.indexOf()
+-----------
+indexOf(args):int
+indexOf(String):int
+indexOf(String ,from index):int
+-------------------------------
+it provides index value for given string or character
+forEx:String s="java"
+      int i=s.indexOf('a');//1
+      int j=s.indexOf("av");//1
+      int k=s.indexOf("a",2);//3
+      int l=s.indexOf('Z');//-1
+indexOf() returns -1 if character or string is not present 
+program using indexOf()
+-----------------------
+1.WAP to print all character only once from string
+String s="javajavajavadevdevdev"
+output:javde
+
+2WAP to count frequency of substring in given string
+
+string s="we work to live and we live to be happy"
+same string they gave 
+substring is live 
+so u have to count how many times live came
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+    

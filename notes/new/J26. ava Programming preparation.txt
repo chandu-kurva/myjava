@@ -1,0 +1,66 @@
+Programs
+------------
+->WAP for following purpose
+1.Prime number
+2.Factorial
+3.Swapping
+4.FibnocciSeries
+5.Swapping
+6.LeapYear
+5.Sum of even numbers
+6.Reverse of number
+7.Palindrome
+8.Armstrong
+
+ArrayProgramming
+------------------
+-->.WAP for following operations
+1.sorting increasing order
+2.sorting decreasing order
+3.greatest from array
+4.smallest from array
+5.second greatest
+6.second smallest
+7.sum and average of array
+8.sum of 2d array
+9.find missing numbers from an array
+
+String Programming
+---------------------
+->WAP to perform following operations
+1.Reverse of string
+2.find vowels from string
+3.find frequency of substring from string
+4.find frequency of characters present in a string
+5.find longest word from a string
+6.palindrome string
+7.prog to remove digits,vowels or spaces from string
+8.Remove duplicate characters from string
+
+Collection Programming
+-------------------------
+-->WAP for following operations
+1.Add Student Objects in ArrayList
+2.Convert arraylist into array.
+3.Atleast 2 programs on every class of collection frameworks
+
+Exception Programming
+------------------------
+1.Program to demonstrate
+-checked exception
+-unchecked exception
+-try and catch block
+-throw keyword usage
+-throws keyword usage
+
+Note: All above things should be subjected to programs.
+
+
+Inheritance App----->Banking Program
+Encapsulation-------->Login (username and password program)
+Abstraction---------->Calculator
+Polymorphism
+overloading---->Addition
+overriding------>payment
+Constructor------>Student program
+constructor overloading--->book program

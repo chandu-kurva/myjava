@@ -1,0 +1,161 @@
+ENCAPSULATION
+-------------
+-DEF:The process of wrapping the data member(variables) and memeber function
+(methods) into a single unit(class) is called as Encapsulation.
+
+-The main purpose of encapsulation is to achieve security of data.
+
+What is the need of Encapsulation?
+
+-we go for encapsulation to protect our data members from invalid user.
+
+-For ex: if monthmum is not protected(Encapsulated) user may misuse the 
+datamember by assigning invalid values.(like >12 or<1)
+
+-If data member is not protected(public) it is under user control i.e user
+will decide what values to assign but those values can be valid or invalid.
+
+
+
+
+
+-if datamember is protected(private) it is under developers control to decide
+which values to allowed.
+
+purpose
+---------
+-protecting the datamembers by keeping them private and accessing through some
+ special methods is nothing but Encapsulation.
+Rules for Encap
+--------------
+1.Declare all data members as private(if a datamember is private it is not
+  accessible outside of class)
+
+2.define separate setter and getter methods(it's not mandatory to define only setter and getter
+  we can define any useer define methods).
+
+JAVA BEAN CLASS:
+----------------
+A class is called as java Bean class if all data members are private and there is separate
+ setter and getter method for each data member.
+setter method
+----------------
+-It is public in nature
+-setter method doesnot have specific returntype
+-setter method contains arguments same as data member
+-name of method is set followed by data member name.
+getter method
+--------------
+-It is public in nature
+-return type must be same as that of data member
+-name of method is get  followed by data member name.
+-getter method does not have arguments.
+Note:
+----
+For every data member we have to define seperate setter and getter method
+
+Examples:
+------------------
+1.protecting bank details from an invalid user to access is an example of encapsulation
+
+2.keeping a password for mobile to protect data is an example of encapsulation
+
+3.Protecting an online docs by keeping password is an example of encapsulation.
+
+4.securing house by keeping lock is an example of encapsulation.
+
+Fully Encapsulated class
+------------------------
+-If all data members of a class are private and there is separate methods to access those data 
+such class is called as fully Encapsulated class.
+
+   class A
+   {
+      private int i;
+      private float f;
+      private String s;
+     //methods to access them//
+ }
+
+Partially Encapsulated class
+-----------------------------
+-If any data members of a class is non private such class is called as partially Encapsulated class.
+   
+   class A
+   {
+      private String name;
+      public int age;
+    }
+
+No Encapsulated class
+--------------------
+-If noneof  data members of a class is  private such class is called as NO Encapsulated class.
+   
+   class A
+   {
+      public String name;
+      public int age;
+    }
+
+Advantages
+-----------
+-Securing the data 
+
+-We can make our class as Write only by writing only setter method
+
+-We can make our class as read only by defining only getter method
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

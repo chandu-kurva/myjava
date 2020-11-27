@@ -1,0 +1,149 @@
+SCANNER CLASS
+----------------
+
+-Scanner is a predefine class(already defined) which is used to take 
+ an input from user during runtime or Execution time.
+
+-This Scanner class is used when we want to take inputs from user
+  not from programmer.
+
+-Steps to use Scanner class
+---------------------------
+1)Write first statement in program as
+---------------------------------------- 
+     import java.util.Scanner;
+              OR
+     import java.util.*;
+
+-Reason: Since Scanner is a class which is present in java.util package.
+-package:Package is like a folder where we can keep common classes together
+         at one place
+         Ex:Gallery
+              |_family(folder)
+              |_friends(folder)
+              |_girlfriends(folder)
+              |_something(folder)
+-So in java if we are using any class of any package we must have to write import statement
+-import: it is a keyword which indicates that we are using anyother class code
+         in our own class.
+2)Create an object of Scanner class
+------------------------------------
+  Scanner s=new Scanner(System.in);
+-here System.in indicates that we are reading input from system.              
+
+3)Using Scanner class reference call Scanner class methods
+----------------------------------------------------------
+methods of Scanner class are:
+nextByte()   ------->For taking byte value as input
+nextBoolean()------->For taking boolean value as input
+nextShort()------->For taking Short value as input
+nextInt()  ------->For taking integer value as input
+nextFloat()  ------->For taking float value as input
+nextDouble()  ------->For taking double value as input
+nextLong()  ------->For taking long value as input
+next()     ------->For taking String value as input without space
+nextLine()------->For taking String value as input with space
+
+Program
+-------
+//Scanner class
+//step-1
+import java.util.Scanner;
+class StdDetails
+{
+ public static void main(String args[])
+ {
+  //step-2
+  Scanner s=new Scanner(System.in);
+  //step-3
+   System.out.println("Enter name ");
+   String name=s.nextLine();
+   System.out.println("Enter age ");
+   int age=s.nextInt();
+System.out.println("Enter percentage ");
+   float percentage=s.nextFloat();
+  System.out.println("Enter result status ");
+   boolean result=s.nextBoolean();
+  System.out.println("Enter contact number ");
+   long contact=s.nextLong();
+  System.out.println("Student Details Entered by You are");
+  System.out.println("Name: "+name);
+System.out.println("Age  :"+age);
+System.out.println("Contact :"+contact);
+System.out.println("Score : "+percentage);
+System.out.println("Result: "+result);
+}}
+
+Output:
+C:\Docs\programs>java StdDetails
+Enter name
+John P
+Enter age
+23
+Enter percentage
+65.5
+Enter result status
+true
+Enter contact number
+9898989878
+Student Details Entered by You are
+Name: John P
+Age  :23
+Contact :9898989878
+Score : 65.5
+Result: true
+
+Note-1:
+-------
+If we did not give the values properly while asking during runtime we will get 
+ "InputMismatchException"
+C:\Docs\programs>java StdDetails
+Enter name
+john p
+Enter age
+44.5
+Exception in thread "main" java.util.InputMismatchException
+
+->Here age should be of integer type but we gave float type .
+
+
+Note-2
+-------
+-We don't have any method called as nextChar() to take character as input
+rather we have a method like 
+next().charAt(0)------>To take character input i.e
+-First we will enter string value from that it takes only first character 
+  Ex: Entered value is---->Abcd
+              Output is -->A
+
+
+C:\Docs\programs>java StdDetails
+Enter name
+John
+Enter age
+23
+Enter percentage
+44.5
+Enter result status
+false
+Enter contact number
+987654321
+Enter Gender
+Male
+Student Details Entered by You are
+Name: John
+Age  :23
+Gender :M
+Contact :987654321
+Score : 44.5
+Result: false
+
+
+
+
+
+
+
+
+
+

@@ -1,0 +1,433 @@
+TYPES OF VARIABLES
+---------------------
+-Depending on declaration variables are divided into two types.
+1.Local variable
+2.Global variable(Data member)
+
+Localvariables
+--------------
+-Variables which are declared inside the method(main() or userdefine) and within the scope of 
+class({})  such variables are called as Local Variables.
+
+Are Local variables accessible everywhere?
+--------------------------------------------
+Local variables are accessible only within the method in which they are declared
+they are not accessible outside of that method.
+-if we try to access them we will get compile time error saying that "Cannot find Symbol".
+//Local variables//
+class Employee
+{
+
+  public static void displaydetails()
+  {
+    String ename="John";
+    int eid=8075;
+    String desg="Developer";
+    System.out.println("Employee name: "+ename);
+    System.out.println("Employee is :"+eid);
+     System.out.println("Designation :"+desg);
+
+   }
+   public static void main(String args[])
+   {
+      displaydetails();
+      String ename="john";
+    int eid=8054;
+    String desg="QA";
+    System.out.println("Employee name: "+ename);
+    System.out.println("Employee is :"+eid);
+     System.out.println("Designation :"+desg);
+
+   }
+}-is Initialisation of local variable is mandatory?
+------------------------------------------------------
+Yes,itis mandatory to initialise local variables IF WE did not initialise we will get compile time 
+error saying that "Variable might not initialised".
+
+-Local variables can only be default or final i.e we cannot declared a local
+ variable as private,public or protected
+  Ex: public static void add()
+      {
+         int i=100;//LV dec is valid
+         public int i=100;//LV dec is Invalid
+        final int i=100;//LV dec is valid
+        private int i=100;//LV dec is Invalid
+        protected int i=100;//LV dec is Invalid
+      }
+
+GLOBAL VARIABLES(Data members)
+----------------
+-Variables which are declared OUTSIDE the method(main() or userdefine) and within the scope of 
+class({})  such variables are called as global Variables.
+
+-global variables are divided into 2 types 
+  1.static variable(also called as class variable)
+    Ex: static int i=100;
+
+  2.Non static variable(also called as Instance variable)
+    Ex: int i=100;
+-Global variables are accessible everywhere with in the scope of a class.
+
+
+
+//Global variables//
+class Student
+{
+  //static global var
+  static  String college="Qspiders";//global var
+   static String stdname="Rohan";//global var
+   static int passingmarks=60;//global var
+   static  int maxbacklogs=12;//globalvar
+    public static void main(String args[])
+    {
+       System.out.println("Details from main method are:");
+        System.out.println(college);
+        System.out.println(stdname);
+System.out.println(passingmarks);
+System.out.println(maxbacklogs);
+displayDetails();
+         }
+   public static void displayDetails()
+    {
+        System.out.println("Details from display method are:");
+        System.out.println("Name : "+stdname);
+        System.out.println("College :"+college);
+        System.out.println("Marks :"+passingmarks);
+System.out.println("AffordableBacks:"+maxbacklogs);
+     }} 
+
+-Is initialisation of global var is mandatory?
+A>They are not mandatory to initialise if we did not initialise JVM will take default
+  values based on data types.
+   byte,short,int and long------------->0
+   float and double-------------------->0.0
+   String----------------------------->null
+   boolean---------------------------->false
+   char-------------------------------->empty space
+Program
+-------class Demo
+{
+//static global variables without initialisation//
+static int i;
+static  long lt;
+static  short s;
+static  byte b;
+static  char ch;
+static  boolean b1;
+static  float f;
+static  double d;
+static String str;
+public static void main(String args[])
+{
+System.out.println(i);
+System.out.println(lt);
+System.out.println(s);
+System.out.println(b);
+System.out.println(ch);
+System.out.println(b1);
+System.out.println(f);
+System.out.println(d);
+System.out.println(str);
+}}
+
+
+-Global var can be public ,default,private ,protected and final.
+-Global var are also called as Datamembers.
+
+***
+DIFFRENCES BETWEEN LOCAL VAR AND GLOBAL VAR
+---------------------------------------------------
+      LOCAL VAR                                   GLOBAL VAR
+----------------------------------------------------------------------------------
+-DEFINITION                                     -DEFINITION
+
+-ACCESSIBILITY                                  -ACCESSIBILITY
+
+-INITIALISATION                                 -INITIIALISATION
+
+-TYPESOFLOCAL                                   -TYPESOFGLOBAL
+
+-lOCAL VAR CAN BE DEFAULT                       -GLOBAL VAR CAN BE PUBLIC,PRIVATE
+  OR FINAL                                        PROTETED,DEFAULT OR FINAL
+
+-LOCAL VAR ARE PRESENT IN STACKAREA             -GLOBALVAR ARE PRESENT IN HEAPAREA
+
+Q)What if local var and global var names are same?
+A.If local var and global var names are same first priority is always 
+  given to local variables because they are inside method and nearear for execution to JVM
+class STDApp
+{
+//static global variables //
+static String name="Qspiders"; 
+static  long  contact=840324561l;
+static  String email="Qspiders@gmail.com";
+public static void enquiry()
+{
+  //local vars
+  String name="QspidersKPHB";
+  String email="Qspiderskphb@gmail.com";
+//print statements
+  System.out.println(name);
+  System.out.println(contact);
+System.out.println(email);
+}
+public static void main(String args[])
+{
+  enquiry();
+}}
+
+Output
+-------
+QspidersKPHB
+840324561
+Qspiderskphb@gmail.com
+
+***METHOD OVERLOADING
+-----------------------
+-THE PROCESS OF DEVELOPING MULTIPLE METHODS WITH SAME NAME BUT DIFFERENT ARGUMENTS
+ LIST IS CALLED AS METHOD OVERLOADING.
+
+ RULES FOR DEFINING ARGUMENT LIST
+----------------------------------
+-NO.OF ARGUMENTS MUST BE DIFFERENT.
+  EX: swiggy()
+      swiggy(String name)
+      swiggy(String name,int orderid)
+
+-Types(data) of arguments must be different
+   Ex:
+        add(int i,int j)
+        add(double  d,double d1)
+        add(String s1,String s2)
+
+-Sequence or Position of Arguments must be different.
+         login(String url,int id)
+         login(int id,String pwd)
+-We go for methodoverloading when we want to perform one task in multiple ways.
+Examples
+----------
+1.Nontechnical
+-----------------
+Travelling---Hyd-Bang
+bus
+train
+aeroplane
+bike
+car........etc
+2.keeping phonepassword
+------------------------
+Numberlock
+Drawing pattern
+Finger print
+Face Sensor
+Technical Example
+------------------
+-Payment in any Ecommerce
+1.Credit
+2.Debit
+3.WAllets(Gpay,Ppay,Amazonpay,PTM)
+4.Cash on Delivery
+
+WAP to develop the APP for Payment Module using MethodOverloading.
+
+public static void payment(String wallettype,int UID)
+public static void payment(String cardtype,long cardno,int cvvnumber)
+public static void payment(String type,String username,int pwd,long Acountnumber)
+public static void main(String args[])
+{
+  payment("googlepay",1221);
+  payment("Debit",123456789l,322);
+  payment("Netbnking","John",1290,123456789l);
+}
+
+Solution
+----------
+class S
+{
+public static void payment(String wallettype,int UID)
+{
+  System.out.println("Wallet type :"+wallettype);
+  System.out.println("UID         :"+UID);
+
+}
+public static void payment(String cardtype,long cardno,int cvvnumber)
+{
+  System.out.println("CardType : "+cardtype);
+  System.out.println("CardNumber : "+cardno);
+  System.out.println("CVV Number : "+cvvnumber);
+}
+public static void payment(String type,String username,int pwd,long Acountnumber)
+{
+  System.out.println("Type : "+type);
+  System.out.println("Username : "+username);
+  System.out.println("Password : "+pwd);
+  System.out.println("Accountno : "+Acountnumber);
+}
+public static void main(String args[])
+{
+  payment("googlepay",1221);
+  payment("Debit",123456789l,322);
+  payment("Netbnking","John",1290,123456789l);
+}
+}
+
+Output
+-------
+C:\Docs\programs\Kccm4>java S
+Wallet type :googlepay
+UID         :1221
+CardType : Debit
+CardNumber : 123456789
+CVV Number : 322
+Type : Netbnking
+Username : John
+Password : 1290
+Accountno : 123456789
+
+
+
+
+can we overload main() or not?
+A>YES,we can overload main() because JVM knows a main() which is having
+  arguments as String args[](command line arguments),so if we define any other methods
+  whose name is main it will be considered as userdefine methods.
+
+Note:In practical or realtime it is suggested not to overload main().
+
+Q.can we overload final methods?
+A.Yes,we can overload final methods because final keyword says do not
+  change implementation and in overloading we are not changing implementation
+  rather we are changing arguments.
+
+Q.can we overload private methods or not?
+A.YES we can overload private methods because private methods are accessible
+  everwhere in same class and overloading also happens within class .
+
+Q.can we overload non static methods or not?
+A.YES we can overload non static methods but to call them we have to create an
+  Object.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+Please try the same program of local variable for static global var
+Note:Don't use non static variable
+
+
+
+
+
+
+
+
+
+
+
+
+
+

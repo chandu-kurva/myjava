@@ -1,0 +1,97 @@
+String-string is predefine class which is present in java.lang package
+--------
+in java string is an
+1.object
+2.datatype
+3.class
+4.group of characters
+***immutability
+objects
+--------
+2 ways
+1.using new keyword-2 objects will get created
+   1. one is under heap area-reference var assigned to it
+    2.another is under string constant pool-it is small part of
+    heap area-no
+   reference assign to it it is only for backup
+   String s1=new String("Java");
+   String s2=new String("java");
+2.using literal:
+first jvm will go to SCP and check is there any object present
+ with string data 
+if it is there it will assign reference to it ,if it is 
+not there it creates new object and assign
+reference
+---------------
+String s1=new String("java");
+String s2=new String("java");
+  String s3="java";
+  String s4="java";
+
+   so on
+ String s100="java";
+IMMUTABILITY
+-------------
+From above example we understood that for one string object 
+there can be multiple reference
+assign to it if we changes data of one string object
+ it will effect to multiple
+references thats why java says that string objects are 
+immutable i.e once we 
+created we cannot modify it.
+Notes:
+------
+in the above example with new keyword 2 objects will get 
+created one is under heap and another is under scp.
+since concat operation is performed during runtime
+concatinated object will get created under heap area
+
+since there is no reference assign to concatiated object it is
+eligible for deletion and garbage collector will delete
+this object.
+
+since s1 is refferring to java we will get output as java .
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+   
+
+
+
+
+
+
+
+
+
+
+
+
