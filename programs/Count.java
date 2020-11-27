@@ -6,7 +6,7 @@ public class Count
     count=0;
     for(i=1;i<=55;i++)
     {
-        if(i%5==0)
+        if(i%10==0)
       {
       count=count+1;
 }
